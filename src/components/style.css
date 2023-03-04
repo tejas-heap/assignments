@@ -1,0 +1,119 @@
+.container{
+    display:grid;
+    height:100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "homepage topbar topbar topbar"
+    "adduser adduser adduser adduser"
+    "sidebar midpage midpage midpage"
+    "sidebar midpage midpage midpage"
+    "sidebar midpage midpage midpage";
+
+}
+.sidebar{
+    grid-area: sidebar;
+    grid-column: 1/1;
+    grid-row:1/2;
+    margin-left: 10px;
+    margin-top: 80px;
+}
+
+.homepage{
+    grid-area: homepage;
+    
+}
+.midpage{
+    grid-area: midpage;
+    grid-column:2/2;
+    grid-row:2/2;
+    margin-top: -60px;
+    height:5rem;
+}
+.search{
+    grid-column: 4/5;
+    grid-row: 2;
+    margin-top: -30px;
+}
+.adduser{
+    grid-area: adduser;
+    grid-column: 5/5;
+    grid-row: 1/2;
+    margin-top: 100px;
+
+}
+.topbar{
+    grid-area: topbar;
+    grid-column: 5/5;
+}
+.grid{
+    grid-column: 4/5;
+    grid-row: 1/1;
+    margin-top: 100px;
+}
+
+@media screen and (min-width:800px) {
+    
+    .search2{
+        display:none;
+    }
+    .adduser2{
+        display:none;
+    }
+}
+
+button{
+display: inline-block;
+outline: none;
+cursor: pointer;
+font-weight: 500;
+border: 1px solid black;
+border-radius: 2px;
+height: 36px;
+line-height: 34px;
+font-size: 14px;
+color: #5a1bce;
+background-color: #ffffff;
+transition: background-color 0.2s ease-in-out 0s, opacity 0.2s ease-in-out 0s;
+padding: 0 18px;
+}
+
+@media screen and (max-width:800px){
+    .container{
+        height:7rem;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .sidebar{
+        display:none;
+    }
+    .adduser{
+        margin-left: -50px;
+        display: none;
+        
+    }
+    
+    .grid{
+        display:none;
+    }
+    button{
+        width:10px;
+        padding-right:14px;
+        padding-left: 5px;
+    }
+    .midpage{
+        grid-column: 1/2;    
+        margin-top: 60px;
+        
+    }
+    .adduser2{
+        grid-row:4/5 ;
+        grid-column:5/5;
+    }
+    .search{
+        display:none;
+    }
+    .search2{
+        grid-column: 5/5;
+    }
+}
